@@ -20,8 +20,8 @@ const useGetRepoDetails = () => {
 			let response = await axios({
 				method: 'get',
 				url: hasMore
-					? `${process.env.REACT_APP_API_URL}q=created:>${currentDate}&amp;sort=stars&amp;order=desc&page=${updatedPageNum}`
-					: `${process.env.REACT_APP_API_URL}q=created:>${currentDate}&amp;sort=stars&amp;order=desc`
+					? `https://api.github.com/search/repositories?q=created:>${currentDate}&amp;sort=stars&amp;order=desc&page=${updatedPageNum}`
+					: `https://api.github.com/search/repositories?q=created:>${currentDate}&amp;sort=stars&amp;order=desc`
 			});
 			setRepos(
 				hasMore ? [...repos, ...response?.data?.items] : response?.data?.items
