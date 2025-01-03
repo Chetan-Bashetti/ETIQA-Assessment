@@ -19,7 +19,7 @@ html {
 .app {
 	display: flex;
 	flex: 1;
-	overflow-x: hidden;
+	/* overflow-x: hidden; */
 	font-family: 'Montserrat', sans-serif;
 }
 

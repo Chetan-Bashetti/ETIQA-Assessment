@@ -1,5 +1,5 @@
 .home-wrapper {
-	overflow-y: hidden;
+	/* overflow-y: hidden; */
 	display: flex;
 	flex-direction: column;
 	flex: 1;
@@ -12,16 +12,22 @@
 	padding: 1em;
 	background: lightgray;
 	font-weight: 500;
+	width: -webkit-fill-available;
+	position: fixed;
 }
 
 .cards-wrapper {
-	overflow: scroll;
+	/* overflow: scroll; */
+	padding: 3em 0;
 }
 
 .footer {
 	display: flex;
 	padding: 1em;
 	background: lightgray;
+	width: -webkit-fill-available;
+	position: fixed;
+	bottom: 0;
 }
 
 .footer-item {
@@ -34,4 +40,16 @@
 
 .blue {
 	color: rgb(0 128 249);
+}
+
+.records-loading {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 2em;
+}
+
+.loader {
+	position: fixed;
+	left: 45%;
 }

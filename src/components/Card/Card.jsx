@@ -6,7 +6,7 @@ const Card = ({ repoDetails }) => {
 	return (
 		<div className='card-wrapper'>
 			<div>
-				<img className='avatar' src={owner.avatar_url} alt={name} />
+				<img className='avatar' src={owner?.avatar_url} alt={name} />
 			</div>
 			<div className='card-details'>
 				<div className='repo-name-ratings'>

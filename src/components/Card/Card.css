@@ -27,6 +27,7 @@
 	font-size: var(----font-size);
 	font-weight: var(--font-weight);
 	margin-bottom: 0.2em;
+	word-wrap: break-word;
 }
 
 .repo-rating {
