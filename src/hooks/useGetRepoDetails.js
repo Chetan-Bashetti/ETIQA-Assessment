@@ -7,6 +7,7 @@ const useGetRepoDetails = () => {
 	const [isLoading, setIsLoading] = React.useState(false);
 	const [totalRecords, settotalRecords] = React.useState();
 	const [isLoadingMore, setIsLoadingMore] = React.useState(false);
+	const [message, setMessage] = React.useState('');
 
 	let currentDate = '2024-07-15';
 
@@ -26,13 +27,16 @@ const useGetRepoDetails = () => {
 				hasMore ? [...repos, ...response?.data?.items] : response?.data?.items
 			);
 			settotalRecords(response?.data?.total_count);
-			if (hasMore) setPageNum(updatedPageNum);
 
-			if (hasMore) setIsLoadingMore(false);
-			else setIsLoading(false);
+			if (hasMore) {
+				setPageNum(updatedPageNum);
+				setIsLoadingMore(false);
+			} else setIsLoading(false);
 		} catch (e) {
-			if (hasMore) setIsLoadingMore(false);
-			else setIsLoading(false);
+			if (hasMore) {
+				setIsLoadingMore(false);
+				setMessage(e.response.data.message);
+			} else setIsLoading(false);
 		}
 	};
 
@@ -42,7 +46,8 @@ const useGetRepoDetails = () => {
 		isLoading,
 		totalRecords,
 		getTrendingRepos,
-		isLoadingMore
+		isLoadingMore,
+		message
 	};
 };
 

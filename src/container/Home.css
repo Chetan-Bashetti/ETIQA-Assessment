@@ -54,3 +54,15 @@
 	left: 45%;
 	top: 45%;
 }
+
+.error-message {
+	flex: 1;
+	padding: 1em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	font-size: 1.2em;
+	font-weight: 500;
+	color: red;
+}

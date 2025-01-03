@@ -1,21 +1,34 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react';
 
-import Card from 'components/Card/Card';
-import useGetRepoDetails from 'hooks/useGetRepoDetails';
 import StarIcon from '@mui/icons-material/Star';
 import SettingsIcon from '@mui/icons-material/Settings';
 import InfiniteScroll from 'react-infinite-scroll-component';
+
 import CircularProgress from '@mui/material/CircularProgress';
+import Card from 'components/Card/Card';
+
+import useGetRepoDetails from 'hooks/useGetRepoDetails';
 
 import './Home.css';
 
 const Home = () => {
-	const { repos, totalRecords, isLoading, getTrendingRepos, isLoadingMore } =
-		useGetRepoDetails();
+	const {
+		repos,
+		totalRecords,
+		isLoading,
+		getTrendingRepos,
+		isLoadingMore,
+		message
+	} = useGetRepoDetails();
 
 	React.useEffect(() => {
 		getTrendingRepos(false);
 	}, []);
+
+	if (message?.length) {
+		return <div className='error-message'>{message}</div>;
+	}
 
 	return (
 		<div className='home-wrapper'>
@@ -45,8 +58,11 @@ const Home = () => {
 							</>
 						}
 					>
-						{repos?.map((eachRepo) => (
-							<Card repoDetails={eachRepo} key={eachRepo.id} />
+						{repos?.map((eachRepo, ind) => (
+							<Card
+								repoDetails={eachRepo}
+								key={eachRepo.id + ind + eachRepo.name}
+							/>
 						))}
 					</InfiniteScroll>
 				)}
