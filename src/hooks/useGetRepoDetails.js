@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const useGetRepoDetails = () => {
 	const [repos, setRepos] = React.useState([]);
-	const [pageNum, setPageNum] = React.useState(0);
+	const [pageNum, setPageNum] = React.useState(1);
 	const [isLoading, setIsLoading] = React.useState(false);
 
 	React.useEffect(() => {

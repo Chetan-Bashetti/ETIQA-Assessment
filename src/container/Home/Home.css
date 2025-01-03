@@ -1,0 +1,37 @@
+.home-wrapper {
+	overflow-y: hidden;
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+}
+
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 1em;
+	background: lightgray;
+	font-weight: 500;
+}
+
+.cards-wrapper {
+	overflow: scroll;
+}
+
+.footer {
+	display: flex;
+	padding: 1em;
+	background: lightgray;
+}
+
+.footer-item {
+	flex: 1 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.blue {
+	color: rgb(0 128 249);
+}
