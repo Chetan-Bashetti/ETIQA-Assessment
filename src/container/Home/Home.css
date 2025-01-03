@@ -14,11 +14,11 @@
 	font-weight: 500;
 	width: -webkit-fill-available;
 	position: fixed;
+	font-size: 20px;
 }
 
 .cards-wrapper {
-	/* overflow: scroll; */
-	padding: 3em 0;
+	padding: 4em 0;
 }
 
 .footer {
@@ -52,4 +52,5 @@
 .loader {
 	position: fixed;
 	left: 45%;
+	top: 45%;
 }

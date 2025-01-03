@@ -27,6 +27,7 @@
 	font-size: var(----font-size);
 	font-weight: var(--font-weight);
 	margin-bottom: 0.2em;
+	width: 200px;
 	word-wrap: break-word;
 }
 
@@ -53,6 +54,8 @@
 	margin-bottom: 0.5em;
 	font-weight: var(--font-weight);
 	font-size: 13px;
+	width: 200px;
+	word-wrap: break-word;
 }
 
 .repo-desc {
